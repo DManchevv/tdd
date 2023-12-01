@@ -1,4 +1,4 @@
-const { dbClient } = require("./utils");
+const { dbClient } = require("../utils");
 
 module.exports = class Book {
     isbn;

@@ -4,6 +4,7 @@ const assert = require("assert");
 const { dbClient } = require('./utils.js');
 const router = express.Router();
 const booksRouter = require('./routes/booksRouter.js');
+const librariesRouter = require('./routes/libraryRouter.js');
 const { logErrorMiddleware, returnError } = require("./customErrors/errorHandler.js");
 const NotFound404Error = require('./customErrors/NotFound404Error.js');
 
@@ -14,7 +15,8 @@ try {
     app.use(express.static(`${__dirname}/static`));
     app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
-    app.use('/books', booksRouter);
+    app.use('/books', booksRouter)
+       .use('/libraries', librariesRouter);
 
     app.get('*', (req, res) => {
         throw new NotFound404Error();
