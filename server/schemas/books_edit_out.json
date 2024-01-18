@@ -1,0 +1,39 @@
+{
+    "title": "Edit Book Output",
+    "type": "object",
+    "required": [
+        "id",
+        "isbn",
+        "author",
+        "name",
+        "active",
+        "library_id"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "maxLength": 30
+        },
+        "isbn": {
+            "type": "string",
+            "maxLength": 30
+        },
+        "author": {
+            "type": "string",
+            "maxLength": 30
+        },
+        "name": {
+            "type": "string",
+            "maxLength": 30
+        },
+        "active": {
+            "type": "boolean"
+        },
+        "library_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        }
+    }
+}

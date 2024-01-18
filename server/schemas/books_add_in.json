@@ -1,0 +1,31 @@
+{
+    "title": "Add Book",
+    "type": "object",
+    "required": [
+        "book"
+    ],
+    "properties": {
+        "book": {
+            "type": "object",
+            "required": [
+                "isbn",
+                "author",
+                "name"
+            ],
+            "properties": {
+                "isbn": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "author": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 30
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "title": "Add Book Output",
+    "type": "object",
+    "required": [
+        "id",
+        "isbn",
+        "author",
+        "name",
+        "active",
+        "library_id"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "maxLength": 30
+        },
+        "isbn": {
+            "type": "string",
+            "maxLength": 30
+        },
+        "author": {
+            "type": "string",
+            "maxLength": 30
+        },
+        "name": {
+            "type": "string",
+            "maxLength": 30
+        },
+        "active": {
+            "type": "boolean",
+            "maxLength": 30
+        },
+        "library_id": {
+            "type": [
+                "null",
+                "number"
+            ]
+        }
+    }
+}

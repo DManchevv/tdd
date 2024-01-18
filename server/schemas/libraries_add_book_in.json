@@ -1,0 +1,12 @@
+{
+    "title": "Add Book To Library",
+    "type": "object",
+    "required": [
+        "bookID"
+    ],
+    "properties": {
+        "bookID": {
+            "type": "number"
+        }
+    }
+}

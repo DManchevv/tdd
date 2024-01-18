@@ -1,0 +1,21 @@
+{
+    "title": "Add Library",
+    "type": "object",
+    "required": [
+        "library"
+    ],
+    "properties": {
+        "library": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "maxLength": 30
+                }
+            }
+        }
+    }
+}
