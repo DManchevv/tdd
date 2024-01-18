@@ -15,8 +15,8 @@ try {
     app.use(express.static(`${__dirname}/static`));
     app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
-    app.use('/books', booksRouter)
-       .use('/libraries', librariesRouter);
+    app.use('/api/books', booksRouter)
+       .use('/api/libraries', librariesRouter);
 
     app.get('*', (req, res) => {
         throw new NotFound404Error();
@@ -25,9 +25,11 @@ try {
     app.use(logErrorMiddleware);
     app.use(returnError);
 
-    app.listen(config.nodePort, () => {
-        console.log(`Starting server on port ${config.nodePort}`);
-    });
+   // app.listen(config.nodePort, () => {
+        //console.log(`Starting server on port ${config.nodePort}`);
+    //});
+
+    module.exports = app;
 }
 catch (err) {
     console.error("CRITICAL_ERROR", err);

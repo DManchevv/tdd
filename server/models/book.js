@@ -54,5 +54,15 @@ module.exports = class Book {
         
         return updatedBook;
     }
+
+    static async getBook(id) {
+        let book = await dbClient.one(`
+            SELECT *
+            FROM books
+            WHERE id = $1
+        `, [id]);
+
+        return book;
+    }
 }
 

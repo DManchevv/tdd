@@ -4,6 +4,13 @@
     "express": "^4.18.2",
     "nodejs": "^0.0.0",
     "pg-promise": "^11.5.4",
-    "stack-trace": "^1.0.0-pre2"
+    "stack-trace": "^1.0.0-pre2",
+    "supertest": "^6.3.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }

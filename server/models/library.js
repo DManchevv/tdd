@@ -2,7 +2,6 @@ const { dbClient } = require("../utils")
 
 module.exports = class Library {
     constructor(library) {
-        this.books = [];
         this.id = library.id;
         this.name = library.name;
     }
@@ -42,8 +41,6 @@ module.exports = class Library {
             WHERE id = $2
             RETURNING *
         `, [this.id, bookID]);
-
-        this.books.push(addedPair);
 
         return addedPair;
     }

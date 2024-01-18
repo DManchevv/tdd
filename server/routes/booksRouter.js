@@ -19,6 +19,16 @@ router.get('/', asyncErrorHandler(async (req, res) => {
     res.status(200).json(books);
 }));
 
+router.get('/:id', asyncErrorHandler(async (req, res) => {
+    let id = req.params.id;
+    assertClient(id != null, "Please provide book ID");
+    assertClient(parseStringToNumber(id), "Book ID must be a number!");
+
+    let book = Book.getBook(id);
+
+    res.status(200).json(book);
+}))
+
 router.post('/add', asyncErrorHandler(async (req, res) => {
     assertClient(Book.validateBookInput(req.body.book), "Invalid input!");
 
@@ -30,7 +40,7 @@ router.post('/add', asyncErrorHandler(async (req, res) => {
 
 router.put('/edit/:id', asyncErrorHandler(async (req, res) => {
     let id = req.params.id;
-
+    
     assertClient(id != null, "Please provide book ID");
     assertClient(parseStringToNumber(id), "Book ID must be a number!");
     assertClient(req.body.book != null, "Please provide book information!");
